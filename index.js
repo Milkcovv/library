@@ -39,21 +39,52 @@ let myLibrary = [
 {
 	title:'Hello world',
 	author: 'me',
-	pages: 25,
+	pages: 1,
 	read: false
 },
 
 {
 	title:'Earth to moon',
 	author: 'you',
-	pages: 35,
+	pages: 2,
 	read: false
 },
 
 {
 	title:'you are the one ',
 	author: 'you',
-	pages: 45,
+	pages: 3,
+	read: true
+},
+{
+	title:'you are the one ',
+	author: 'you',
+	pages: 4,
+	read: true
+},{
+	title:'you are the one ',
+	author: 'you',
+	pages: 5,
+	read: true
+},{
+	title:'you are the one ',
+	author: 'you',
+	pages: 6,
+	read: true
+},{
+	title:'you are the one ',
+	author: 'you',
+	pages: 7,
+	read: false
+},{
+	title:'you are the one ',
+	author: 'you',
+	pages: 8,
+	read: true
+},{
+	title:'you are the one ',
+	author: 'you',
+	pages: 9,
 	read: true
 },
 
