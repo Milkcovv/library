@@ -1,0 +1,76 @@
+body, html{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	display: grid;
+	place-items:center;
+}
+
+.top {
+	text-align: center;
+}
+
+.wrapper{
+	display: grid;
+	grid-template-rows: 20% 80%;
+}
+
+
+
+.library-wrapper{
+	box-sizing: border-box;
+	padding:20px;
+	height:800px;
+	width:100vw;
+	background-color: lightgrey;
+	display: grid;
+}
+.book-list{
+	  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 40px;
+
+}
+.book-info{
+	height:300px;
+	width: 200px;
+	background-color: orange;
+	text-align: center;
+	display: grid;
+	place-items:center;
+}
+
+
+
+.book-form{
+	width:50%;
+	height:50%;
+	position: absolute;
+	top:25%;
+	left:25%;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-gap:10px;
+	visibility: hidden;
+}
+
+.remove-icon{
+	width:20px;
+	height:20px;
+	background-color: white;
+	border-radius: 50%;
+	position: relative;
+	left:80px;
+	top:-250px;
+	color:grey;
+	visibility: hidden;
+
+}
+
+.book-info:hover .remove-icon{
+
+	visibility: visible;
+	
+}
