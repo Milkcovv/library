@@ -23,7 +23,7 @@ body{
 	box-sizing: border-box;
 	padding:20px;
 	height:800px;
-	width:auto;
+	width:100vw;
 	background-color: lightgrey;
 	display: grid;
 }
@@ -68,6 +68,24 @@ body{
 	color:grey;
 	visibility: hidden;
 
+}
+
+.title{
+	font-size:25px;
+	font-weight: bold;
+}
+
+.author{
+	font-size:25px;
+
+}
+
+.read{
+	text-decoration: underline;
+}
+
+.pages{
+	font-size:25px;
 }
 
 .book-info:hover .remove-icon{

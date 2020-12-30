@@ -36,57 +36,32 @@ $hideForm.addEventListener('click',toggleForm)
 
 
 let myLibrary = [
-{
-	title:'Hello world',
-	author: 'me',
-	pages: 1,
-	read: false
-},
+// {
+// 	title:'Hello world',
+// 	author: 'me',
+// 	pages: 1,
+// 	read: false
+// },
 
-{
-	title:'Earth to moon',
-	author: 'you',
-	pages: 2,
-	read: false
-},
+// {
+// 	title:'Earth to moon',
+// 	author: 'you',
+// 	pages: 2,
+// 	read: false
+// },
 
-{
-	title:'you are the one ',
-	author: 'you',
-	pages: 3,
-	read: true
-},
-{
-	title:'you are the one ',
-	author: 'you',
-	pages: 4,
-	read: true
-},{
-	title:'you are the one ',
-	author: 'you',
-	pages: 5,
-	read: true
-},{
-	title:'you are the one ',
-	author: 'you',
-	pages: 6,
-	read: true
-},{
-	title:'you are the one ',
-	author: 'you',
-	pages: 7,
-	read: false
-},{
-	title:'you are the one ',
-	author: 'you',
-	pages: 8,
-	read: true
-},{
-	title:'you are the one ',
-	author: 'you',
-	pages: 9,
-	read: true
-},
+// {
+// 	title:'you are the one ',
+// 	author: 'you',
+// 	pages: 3,
+// 	read: true
+// },
+// {
+// 	title:'you are the one ',
+// 	author: 'you',
+// 	pages: 4,
+// 	read: true
+// }
 
 
 ];
@@ -132,6 +107,7 @@ function addBookToLibrary(e) {
 		const newRead = getReadStatus();
 		const newBook = new Book(newTitle,newAuthor,newPages,newRead);
 		myLibrary.push(newBook)
+		updateLocalStorage(myLibrary);
 		clearForm();
 		displayLibrary();
 		toggleForm();
@@ -146,6 +122,7 @@ function removeBookFromLibrary(e){
 		const index = e.target.attributes['data-index'].value
 		// const index = this.getAttribute('data-index');
 		myLibrary.splice(index,1);
+		updateLocalStorage(myLibrary);
 		displayLibrary();
 	}
 
@@ -156,6 +133,8 @@ function removeBookFromLibrary(e){
 
 function displayLibrary() {
 	$library.innerHTML = '';
+	const myLocalLibrary = JSON.parse(localStorage.getItem('Library'));
+	myLibrary = [...myLocalLibrary]
 	myLibrary.forEach((book,index) => {
 		const $book = document.createElement('div');
 		const $removeBtn = document.createElement('span');
@@ -174,7 +153,7 @@ function displayLibrary() {
 				}
 				
 			}else{
-				$book.innerHTML +=`<p>${book[prop]}</p>`;
+				$book.innerHTML +=`<p class="${prop}">${book[prop]}</p>`;
 			}
 		}
 		$book.appendChild($removeBtn)
@@ -183,6 +162,13 @@ function displayLibrary() {
 
 	
 }
+
+
+function updateLocalStorage(array){
+	localStorage.setItem('Library', JSON.stringify(array));
+}
+
+
 
 
 
